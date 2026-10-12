@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { View, Text, ScrollView, TouchableOpacity } from "react-native"
 import Estilo from "../styles/Estilo"
 import { useGame } from "../context/GameContext"
@@ -13,12 +13,6 @@ export default ({ navigation }) => {
         numerosSorteados,
         realizarSorteio,
     } = useGame()
-
-    useEffect(() => {
-        if (numerosSorteados.length === 0) {
-            realizarSorteio()
-        }
-    }, [])
 
     return (
         <View style={Estilo.container}>

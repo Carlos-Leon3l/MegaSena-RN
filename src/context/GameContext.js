@@ -9,7 +9,7 @@ export const GameProvider = ({ children }) => {
     const [teimosinha, setTeimosinha] = useState(false)
     const [concursosTeimosinha, setConcursosTeimosinha] = useState(2)
     const [numeroBilhete, setNumeroBilhete] = useState("MS-749102")
-    const [numerosSorteados, setNumerosSorteados] = useState([])
+    const [numerosSorteados, setNumerosSorteados] = useState([6, 14, 28, 35, 42, 57])
 
     const gerarAleatorios = (qtd) => {
         const numeros = new Set()
@@ -53,6 +53,8 @@ export const GameProvider = ({ children }) => {
     const confirmarAposta = () => {
         const randomCode = Math.floor(100000 + Math.random() * 900000)
         setNumeroBilhete(`MS-${randomCode}`)
+        const sorteio = gerarAleatorios(6)
+        setNumerosSorteados(sorteio)
     }
 
     const realizarSorteio = () => {
@@ -67,7 +69,8 @@ export const GameProvider = ({ children }) => {
         setSurpresinha(false)
         setTeimosinha(false)
         setConcursosTeimosinha(2)
-        setNumerosSorteados([])
+        const sorteio = gerarAleatorios(6)
+        setNumerosSorteados(sorteio)
         const randomCode = Math.floor(100000 + Math.random() * 900000)
         setNumeroBilhete(`MS-${randomCode}`)
     }
