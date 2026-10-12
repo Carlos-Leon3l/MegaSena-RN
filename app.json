@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "atividade9",
+    "slug": "atividade9",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
